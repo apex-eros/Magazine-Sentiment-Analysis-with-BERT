@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazine Sentiment Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://wallpapers.com/images/hd/magazine-background-698y8kr8ut9l7r6p.jpg') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 40%;
+        }
+        h2 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 120px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            resize: none;
+        }
+        button {
+            padding: 12px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Magazine Sentiment Analysis</h2>
+        <form action="/predict" method="post">
+            <textarea name="review" placeholder="Type your review here..." required></textarea>
+            <br>
+            <button type="submit">Predict</button>
+        </form>
+        <div class="result">{{ sentiment }}</div>
+    </div>
+</body>
+</html>
